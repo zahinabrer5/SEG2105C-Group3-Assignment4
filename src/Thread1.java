@@ -4,14 +4,19 @@ public class Thread1 extends Thread {
     public void run() {
         try {
             System.out.println("t1: do");
-            Thread.sleep(201);
+            FilePlayer.play("do");
+            Thread.sleep(2001);
             System.out.println("t1: mi");
-            Thread.sleep(202);
+            FilePlayer.play("mi");
+            Thread.sleep(2002);
             System.out.println("t1: sol");
-            Thread.sleep(203);
+            FilePlayer.play("sol");
+            Thread.sleep(2003);
             System.out.println("t1: si");
-            Thread.sleep(204);
+            FilePlayer.play("si");
+            Thread.sleep(2004);
             System.out.println("t1: do-octave");
+            FilePlayer.play("do-octave");
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }

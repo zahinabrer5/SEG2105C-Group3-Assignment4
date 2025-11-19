@@ -5,12 +5,16 @@ public class Thread2 extends Thread {
         try {
             Thread.sleep(1);
             System.out.println("t2: re");
-            Thread.sleep(301);
+            FilePlayer.play("re");
+            Thread.sleep(3001);
             System.out.println("t2: fa");
-            Thread.sleep(302);
+            FilePlayer.play("fa");
+            Thread.sleep(3002);
             System.out.println("t2: la");
-            Thread.sleep(206);
+            FilePlayer.play("la");
+            Thread.sleep(2006);
             System.out.println("t2: do-octave");
+            FilePlayer.play("do-octave");
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
