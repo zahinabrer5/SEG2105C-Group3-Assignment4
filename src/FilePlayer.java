@@ -1,0 +1,38 @@
+import java.io.File;
+
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+
+/**
+ * Classs that will play music files at given paths
+ * 
+ * @author Jesus Molina
+ *
+ */
+public class FilePlayer {
+
+	/**
+	 * Plays an audio clip located at the given path
+	 * 
+	 * @param sound
+	 *            the path to the audio clip that should be played
+	 */
+	public static void play(String sound) {
+        sound = sound.strip();
+        if (!sound.endsWith(".wav"))
+            sound += ".wav";
+		try {
+            File file = new File(FilePlayer.class.getResource(sound).toURI()).getAbsoluteFile();
+			AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(file);
+			Clip clip = AudioSystem.getClip();
+			clip.open(audioInputStream);
+			clip.start();
+
+		} catch (Exception e) {
+			System.out.println("Error with playing sound.");
+			e.printStackTrace();
+		}
+
+	}
+}

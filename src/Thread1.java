@@ -1,10 +1,19 @@
 public class Thread1 extends Thread {
-    private String[] tones = { "do", "mi", "sol", "si", "do-octave" };
-    private int idx = 0;
 
     @Override
     public void run() {
-        System.out.print(tones[idx++]+" ");
-        idx %= tones.length;
+        try {
+            System.out.println("t1: do");
+            Thread.sleep(201);
+            System.out.println("t1: mi");
+            Thread.sleep(202);
+            System.out.println("t1: sol");
+            Thread.sleep(203);
+            System.out.println("t1: si");
+            Thread.sleep(204);
+            System.out.println("t1: do-octave");
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
