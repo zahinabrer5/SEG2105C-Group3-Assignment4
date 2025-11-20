@@ -2,22 +2,22 @@ public class Thread2 extends Thread {
 
     @Override
     public void run() {
-        task2();
+        task1();
     }
 
     // do re mi fa sol la si do-octave
     private void task1() {
         try {
-            Thread.sleep(300*2);
+            Thread.sleep(600*2);
             System.out.println("t2: re");
             FilePlayer.play("re");
-            Thread.sleep(700*2);
+            Thread.sleep(900*2);
             System.out.println("t2: fa");
             FilePlayer.play("fa");
             Thread.sleep(900*2);
             System.out.println("t2: la");
             FilePlayer.play("la");
-            Thread.sleep(1000*2);
+            Thread.sleep(900*2);
             System.out.println("t2: do-octave");
             FilePlayer.play("do-octave");
         } catch (InterruptedException e) {
