@@ -33,6 +33,60 @@ public class Thread1 extends Thread {
     do do sol sol la la sol fa fa mi mi re re do
     */
     private void task2() {
+        line1();
+        line2FirstHalf(); line2FirstHalf();
+        line1();
+    }
 
+    // do do sol sol la la sol fa fa mi mi re re do
+    private void line1() {
+        try {
+            System.out.println("t1: do");
+            FilePlayer.play("do");
+            Thread.sleep(300*2);
+            System.out.println("t1: do");
+            FilePlayer.play("do");
+            Thread.sleep(300*2);
+            System.out.println("t1: sol");
+            FilePlayer.play("sol");
+            Thread.sleep(300*2);
+            System.out.println("t1: sol");
+            FilePlayer.play("sol");
+            Thread.sleep(900*2);
+            System.out.println("t1: sol");
+            FilePlayer.play("sol");
+            Thread.sleep(1200*2);
+            System.out.println("t1: mi");
+            FilePlayer.play("mi");
+            Thread.sleep(300*2);
+            System.out.println("t1: mi");
+            FilePlayer.play("mi");
+            Thread.sleep(900*2);
+            System.out.println("t1: do");
+            FilePlayer.play("do");
+            Thread.sleep(600*2);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    // sol sol fa fa mi mi re
+    private void line2FirstHalf() {
+        try {
+            System.out.println("t1: sol");
+            FilePlayer.play("sol");
+            Thread.sleep(300*2);
+            System.out.println("t1: sol");
+            FilePlayer.play("sol");
+            Thread.sleep(900*2);
+            System.out.println("t1: mi");
+            FilePlayer.play("mi");
+            Thread.sleep(300*2);
+            System.out.println("t1: mi");
+            FilePlayer.play("mi");
+            Thread.sleep(600*2 + 200);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

@@ -31,6 +31,53 @@ public class Thread2 extends Thread {
     do do sol sol la la sol fa fa mi mi re re do
     */
     private void task2() {
+        line1();
+        line2FirstHalf(); line2FirstHalf();
+        line1();
+    }
 
+    // do do sol sol la la sol fa fa mi mi re re do
+    private void line1() {
+        try {
+            Thread.sleep(1200*2 + 100); // add a small delay of 100 ms before starting t2...
+            System.out.println("t2: la");
+            FilePlayer.play("la");
+            Thread.sleep(300*2);
+            System.out.println("t2: la");
+            FilePlayer.play("la");
+            Thread.sleep(900*2);
+            System.out.println("t2: fa");
+            FilePlayer.play("fa");
+            Thread.sleep(300*2);
+            System.out.println("t2: fa");
+            FilePlayer.play("fa");
+            Thread.sleep(900*2);
+            System.out.println("t2: re");
+            FilePlayer.play("re");
+            Thread.sleep(300*2);
+            System.out.println("t2: re");
+            FilePlayer.play("re");
+            Thread.sleep(900*2);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    // sol sol fa fa mi mi re
+    private void line2FirstHalf() {
+        try {
+            Thread.sleep(600*2);
+            System.out.println("t2: fa");
+            FilePlayer.play("fa");
+            Thread.sleep(300*2);
+            System.out.println("t2: fa");
+            FilePlayer.play("fa");
+            Thread.sleep(900*2);
+            System.out.println("t2: re");
+            FilePlayer.play("re");
+            Thread.sleep(300*2 + 200);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
