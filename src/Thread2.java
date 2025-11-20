@@ -2,27 +2,29 @@ public class Thread2 extends Thread {
 
     @Override
     public void run() {
-        task1();
-    }
-
-    // do re mi fa sol la si do-octave
-    private void task1() {
         try {
-            Thread.sleep(600*2);
-            System.out.println("t2: re");
-            FilePlayer.play("re");
-            Thread.sleep(900*2);
-            System.out.println("t2: fa");
-            FilePlayer.play("fa");
-            Thread.sleep(900*2);
-            System.out.println("t2: la");
-            FilePlayer.play("la");
-            Thread.sleep(900*2);
-            System.out.println("t2: do-octave");
-            FilePlayer.play("do-octave");
+            task1();
+            Thread.sleep(1200*2);
+            task2();
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    // do re mi fa sol la si do-octave
+    private void task1() throws InterruptedException {
+        Thread.sleep(600*2);
+        System.out.println("t2: re");
+        FilePlayer.play("re");
+        Thread.sleep(900*2);
+        System.out.println("t2: fa");
+        FilePlayer.play("fa");
+        Thread.sleep(900*2);
+        System.out.println("t2: la");
+        FilePlayer.play("la");
+        Thread.sleep(900*2);
+        System.out.println("t2: do-octave");
+        FilePlayer.play("do-octave");
     }
 
     /*
@@ -30,54 +32,46 @@ public class Thread2 extends Thread {
     sol sol fa fa mi mi re sol sol fa fa mi mi re
     do do sol sol la la sol fa fa mi mi re re do
     */
-    private void task2() {
+    private void task2() throws InterruptedException {
         line1();
         line2FirstHalf(); line2FirstHalf();
         line1();
     }
 
     // do do sol sol la la sol fa fa mi mi re re do
-    private void line1() {
-        try {
-            Thread.sleep(1200*2 + 100); // add a small delay of 100 ms before starting t2...
-            System.out.println("t2: la");
-            FilePlayer.play("la");
-            Thread.sleep(300*2);
-            System.out.println("t2: la");
-            FilePlayer.play("la");
-            Thread.sleep(900*2);
-            System.out.println("t2: fa");
-            FilePlayer.play("fa");
-            Thread.sleep(300*2);
-            System.out.println("t2: fa");
-            FilePlayer.play("fa");
-            Thread.sleep(900*2);
-            System.out.println("t2: re");
-            FilePlayer.play("re");
-            Thread.sleep(300*2);
-            System.out.println("t2: re");
-            FilePlayer.play("re");
-            Thread.sleep(900*2);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+    private void line1() throws InterruptedException {
+        Thread.sleep(1200*2 + 300); // add a small delay of 100 ms before starting t2...
+        System.out.println("t2: la");
+        FilePlayer.play("la");
+        Thread.sleep(300*2);
+        System.out.println("t2: la");
+        FilePlayer.play("la");
+        Thread.sleep(900*2);
+        System.out.println("t2: fa");
+        FilePlayer.play("fa");
+        Thread.sleep(300*2);
+        System.out.println("t2: fa");
+        FilePlayer.play("fa");
+        Thread.sleep(900*2);
+        System.out.println("t2: re");
+        FilePlayer.play("re");
+        Thread.sleep(300*2);
+        System.out.println("t2: re");
+        FilePlayer.play("re");
+        Thread.sleep(900*2);
     }
 
     // sol sol fa fa mi mi re
-    private void line2FirstHalf() {
-        try {
-            Thread.sleep(600*2);
-            System.out.println("t2: fa");
-            FilePlayer.play("fa");
-            Thread.sleep(300*2);
-            System.out.println("t2: fa");
-            FilePlayer.play("fa");
-            Thread.sleep(900*2);
-            System.out.println("t2: re");
-            FilePlayer.play("re");
-            Thread.sleep(300*2 + 200);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+    private void line2FirstHalf() throws InterruptedException {
+        Thread.sleep(600*2);
+        System.out.println("t2: fa");
+        FilePlayer.play("fa");
+        Thread.sleep(300*2);
+        System.out.println("t2: fa");
+        FilePlayer.play("fa");
+        Thread.sleep(900*2);
+        System.out.println("t2: re");
+        FilePlayer.play("re");
+        Thread.sleep(300*2 + 300);
     }
 }
